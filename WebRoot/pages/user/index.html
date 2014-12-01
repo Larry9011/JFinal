@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>User列表</title>
+</head>
+<body>
+<h1>User列表</h1>
+
+<p><a href="${contextPath}/user/addUser">添加用户</a></p>
+<table>
+    <tr>
+        <td>用户名</td>
+        <td>用户真实姓名</td>
+        <td>手机号码</td>
+        <td>家庭住址</td>
+        <td>操作</td>
+    </tr>
+
+    <#list objectlist.list as obj>
+        <tr>
+            <td>${(obj.username)!''}</td>
+            <td>${(obj.realname)!''}</td>
+            <td>${(obj.mobile)!''}</td>
+            <td>${(obj.address)!''}</td>
+            <td>
+                <a href="${contextPath}/user/queryUserById/${(obj.id)!''}">编辑</a>
+                <a href="${contextPath}/user/deleteById/${(obj.id)!''}">删除</a>
+            </td>
+        </tr>
+    </#list>
+</table>
+<p>当前第${pageNum}页,总共：${objectlist.totalRow}条,总共：${objectlist.totalPage}页,
+    <a href="${contextPath}/user/${pageNum-1}">上一页</a>&nbsp;&nbsp;
+    <a href="${contextPath}/user/${pageNum+1}">下一页</a></p>
+</body>
+</html>

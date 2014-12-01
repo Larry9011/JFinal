@@ -1,0 +1,37 @@
+@CHARSET "UTF-8";
+
+.pagin a, .pagin span {
+min-width: 1em;
+text-align: center;
+display: inline-block;
+font: normal normal bold .875em/ 1.2 "Helvetica Neue", Helvetica,
+ sans-serif;
+text-transform: uppercase;
+padding: 20px;
+width:10px;
+height:10px;
+text-decoration: none;
+border: 1px solid #AAE;
+color: #15B;
+}
+
+.pagin a:hover {
+color: #FFF;
+background-color: #B7322C;
+}
+
+.pagin {
+	width:500px;
+} 	
+
+.pagin .pagin-body .current {
+	background: #A3CCFF;
+	color: #FFF;
+	border: 1px solid #AAE;	
+}
+
+.pagin .prve, .pagin .next {
+	color: #ccc;
+	border: 1px solid #ccc;	
+}
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="true">
+    <file url="file://$PROJECT_DIR$/WebRoot/WEB-INF/lib/cos.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebRoot/WEB-INF/lib/druid-0.2.9.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebRoot/WEB-INF/lib/slf4j-api-1.6.6.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebRoot/WEB-INF/lib/slf4j-log4j12-1.6.6.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebRoot/pages/upload/upload.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebRoot/pages/user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebRoot/upload/upload.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebRoot/user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/jfinal/controller/GetParameterController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/jfinal/controller/HelloWorldController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/jfinal/controller/InterceptorController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/jfinal/controller/UploadController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/jfinal/controller/UserController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/jfinal/interceptor/ActionTestInterceptor.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/jfinal/interceptor/ControllerTestInterceptor.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/jfinal/interceptor/GlobalTestInterceptor.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/jfinal/model/User.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/jfinal/validator/UserValidator.java" charset="UTF-8" />
+  </component>
+</project>

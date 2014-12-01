@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Jfinal 接收参数</title>
+</head>
+<body>
+
+${(msg)!''}
+
+<h1>POST提交参数操作</h1>
+<form action="${contextPath}/param/post" method="post">
+	<p>用户名：<input type="text" name="username"></p>
+	<p>用户密码：<input type="password" name="userpass"></p>
+	<p><input type="submit" value="登录"></p>
+</form>
+
+<hr>
+<h1>GET接收参数的测试</h1>
+<p><a href="${contextPath}/param/get1/1">GET1 一个参数</a></p>
+<p><a href="${contextPath}/param/get2/v1-v2-v3">GET2 给多个参数</a></p>
+</body>
+</html>
