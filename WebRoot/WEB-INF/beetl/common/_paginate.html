@@ -15,28 +15,35 @@
     <tr>
         <td>当前第${currentPage}页，总共：${topicPage.totalRow}条，总共：${topicPage.totalPage}页</td>
 
-        <% if(currentPage <= 8){
-        startPage = 1;
-        }
-        if(totalPage - currentPage<8){
-        endPage = totalPage;
-        }
-        if(currentPage == 1){%>
+        <%
+            if(currentPage <= 8){
+                startPage = 1;
+            }
+
+            if(totalPage - currentPage<8){
+                endPage = totalPage;
+            }
+            if(currentPage == 1){
+        %>
         <td><span>上页</span></td>
-        <%}else{%>
+        <%
+            }else{
+        %>
 
         <td><a href="${contextPath}/page/${currentPage-1}">上页</a></td>
         <%}%>
 
-        <% if(currentPage > 8){%>
+        <% if(currentPage > 8){ %>
         <td><a href="${contextPath}/page/1">1</a></td>
         <td><a href="${contextPath}/page/2">2</a></td>
         <td><span>...</span></td>
         <% }%>
 
-        <% var index = startPage;
-        while(index <= endPage){
-        if(currentPage == index){%>
+        <%
+            var index = startPage;
+            while(index <= endPage){
+            if(currentPage == index){
+        %>
         <td><span>${index}</span></td>
         <% }else{%>
         <td><a href="${contextPath}/page">${index}</a></td>
