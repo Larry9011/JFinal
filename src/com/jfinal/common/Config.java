@@ -1,5 +1,6 @@
 package com.jfinal.common;
 
+import com.jfinal.beetl.MyBeetlRenderFactory;
 import com.jfinal.config.*;
 import com.jfinal.controller.*;
 import com.jfinal.core.JFinal;
@@ -10,6 +11,7 @@ import com.jfinal.model.User;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.render.ViewType;
+import org.beetl.core.GroupTemplate;
 
 /**
  * 配置类
@@ -24,8 +26,17 @@ public class Config extends JFinalConfig {
     public void configConstant(Constants me) {
         loadPropertyFile("jdbc.txt");    // 加载数据库配置信息
         me.setDevMode(getPropertyToBoolean("devMode", true));
-        me.setViewType(ViewType.FREE_MARKER);
+//        me.setViewType(ViewType.FREE_MARKER);
 
+        //配置模板
+        me.setMainRenderFactory(new MyBeetlRenderFactory());
+        //获取GroupTemplate模板，可以设置共享变量操作
+        GroupTemplate groupTemplate=MyBeetlRenderFactory.groupTemplate;
+//        me.setDevMode(getPropertyToBoolean("config.devModel", false));
+        me.setViewType(ViewType.JSP);
+        me.setEncoding("UTF-8");
+
+        // 设置文件上传路径
         PathKit fk = new PathKit();
         String contextPath = fk.getWebRootPath();
         me.setUploadedFileSaveDirectory(contextPath + "/uploadfiles");
@@ -38,6 +49,7 @@ public class Config extends JFinalConfig {
         me.add("/user", UserController.class,"/pages/user");
         me.add("/interceptor", InterceptorController.class);
         me.add("/upload", UploadController.class,"/pages/upload");
+        me.add("/page",BeetlPageController.class,"/");
     }
 
     @Override
