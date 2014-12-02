@@ -1,0 +1,59 @@
+<%
+        if (totalPage <= 0 || currentPage > totalPage) return;
+        var startPage = currentPage - 4;
+        if(startPage < 1){
+            startPage = 1;
+        }
+        var endPage = currentPage + 4;
+        if(endPage > totalPage){
+            endPage = totalPage;
+        }
+%>
+
+<div>
+    <hr>
+    <tr>
+        <td>当前第${currentPage}页，总共：${topicPage.totalRow}条，总共：${topicPage.totalPage}页</td>
+
+        <% if(currentPage <= 8){
+        startPage = 1;
+        }
+        if(totalPage - currentPage<8){
+        endPage = totalPage;
+        }
+        if(currentPage == 1){%>
+        <td><span>上页</span></td>
+        <%}else{%>
+
+        <td><a href="${contextPath}/page/${currentPage-1}">上页</a></td>
+        <%}%>
+
+        <% if(currentPage > 8){%>
+        <td><a href="${contextPath}/page/1">1</a></td>
+        <td><a href="${contextPath}/page/2">2</a></td>
+        <td><span>...</span></td>
+        <% }%>
+
+        <% var index = startPage;
+        while(index <= endPage){
+        if(currentPage == index){%>
+        <td><span>${index}</span></td>
+        <% }else{%>
+        <td><a href="${contextPath}/page">${index}</a></td>
+        <% }
+        index= index+1;
+        }%>
+
+        <% if((totalPage - currentPage) >= 8){%>
+        <td><span>…</span></td>
+        <td><a href="${contextPath}/page/${totalPage - 1}">${totalPage - 1}</a></td>
+        <td><a href="${contextPath}/page/${totalPage}}">${totalPage}</a></td>
+        <% }
+
+        if(currentPage == totalPage){%>
+        <td><span>下页</span></td>
+        <% }else{%>
+        <td><a href="${contextPath}/page/${currentPage + 1}" rel="next">下页</a></td>
+        <% }%>
+    </tr>
+</div>
