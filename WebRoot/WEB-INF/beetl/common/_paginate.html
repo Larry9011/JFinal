@@ -36,6 +36,7 @@
         <% if(currentPage > 8){ %>
         <td><a href="${contextPath}/page/1">1</a></td>
         <td><a href="${contextPath}/page/2">2</a></td>
+        <td><a href="${contextPath}/page/3">3</a></td>
         <td><span>...</span></td>
         <% }%>
 
@@ -46,7 +47,7 @@
         %>
         <td><span>${index}</span></td>
         <% }else{%>
-        <td><a href="${contextPath}/page">${index}</a></td>
+        <td><a href="${contextPath}/page/${index}">${index}</a></td>
         <% }
         index= index+1;
         }%>
