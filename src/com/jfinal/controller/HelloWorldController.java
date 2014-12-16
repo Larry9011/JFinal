@@ -11,6 +11,6 @@ public class HelloWorldController extends Controller {
 
 		String msg = "Welcome To Jfinal World!!";
 		setAttr("helloworld",msg);
-		renderFreeMarker("helloworld.html");  // 渲染你跳转的页面
+		render("helloworld.html");  // 渲染你跳转的页面
 	}
 }

@@ -20,6 +20,9 @@ public class BeetlPageController extends Controller {
 
         String sql = "from t_user order by id desc";
         int pageNum = getParaToInt(0,1);
+
+//        System.out.println("=================="+pageNum);
+
         setAttr("pageNum",pageNum);
         setAttr("topicPage", User.dao.paginate(pageNum, 5, "select * ", sql));
         render("index.html");
@@ -84,7 +87,7 @@ public class BeetlPageController extends Controller {
         User user = getModel(User.class);
         boolean flag = user.update();
         if(flag){
-            redirect("/page/");//用户浏览器URL重写
+            redirect("/page/");  // 用户浏览器URL重写
         }else{
             renderText("Sorry,有些异常，更新失败");
         }

@@ -7,6 +7,7 @@ import com.jfinal.core.JFinal;
 import com.jfinal.ext.handler.ContextPathHandler;
 import com.jfinal.interceptor.GlobalTestInterceptor;
 import com.jfinal.kit.PathKit;
+import com.jfinal.model.Login;
 import com.jfinal.model.User;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
@@ -44,12 +45,13 @@ public class Config extends JFinalConfig {
 
     @Override
     public void configRoute(Routes me) {
-        me.add("/", HelloWorldController.class);
+        me.add("/hello", HelloWorldController.class,"/user");
         me.add("/param", GetParameterController.class,"/pages/param");
-        me.add("/user", UserController.class,"/pages/user");
+//        me.add("/user", UserController.class,"/pages/user");
         me.add("/interceptor", InterceptorController.class);
         me.add("/upload", UploadController.class,"/pages/upload");
-        me.add("/page",BeetlPageController.class,"/");
+        me.add("/page",BeetlPageController.class,"/common");
+        me.add("/",BeetlUserController.class,"/user");
     }
 
     @Override
@@ -62,6 +64,7 @@ public class Config extends JFinalConfig {
         me.add(arp);   // 接入ActiveRecord插件
         arp.setShowSql(true);  // 调试阶段，查看SQL语句
         arp.addMapping("t_user", User.class);  // 将实体和表映射
+        arp.addMapping("user", Login.class);  // 将实体和表映射
     }
 
     @Override

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- Freemarker他需要安全输出  页面当中如果有NULL 会报错 -->
+<!--<h1>${helloworld}</h1>-->
+
+<%
+if(helloworld !=null){
+%>
+<span style="color: red">${helloworld}</span><br/>
+<%
+}else{
+%>
+<span style="color: red"></span><br/>
+<%
+}
+%>
+
+<!--兼容版，可保证页面完全兼容-->
+<div id="SOHUCS"></div>
+<script>
+  (function(){
+    var appid = 'cyrhJGcvP',
+    conf = 'prod_bb921d79f36d76938a567227c1b75a5b';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+  })()
+</script>
+</body>
+</html>
+

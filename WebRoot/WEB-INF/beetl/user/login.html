@@ -1,0 +1,129 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/plugin/easyui132/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="/plugin/easyui132/themes/icon.css">
+    <link href='/css/index.css' rel='stylesheet' type='text/css'>
+    <link href='/css/form.css' rel='stylesheet' type='text/css'>
+
+    <script src="/js/jquery-1.8.0.min.js" type="text/javascript" ></script>
+    <script src="/js/util.js" type="text/javascript" ></script>
+    <script type="text/javascript" src="/plugin/easyui132/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/plugin/easyui132/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="/plugin/easyui132/extends/extends.datebox.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#submit_form').click(function(){
+                $('#form_login').submit();
+            });
+        });
+    </script>
+</head>
+<body>
+<%include ("/user/_head.html") {}%>
+<div id="wrapper">
+    <div id="content">
+        <div id="left">
+            <div class="info">
+                <div class="hd">
+                    <h2>用户登陆
+                    </h2>
+                </div>
+                <form id='form_login' action="/login" method="post">
+                    <div class="row">
+                        <label class="field">登陆名
+                        </label>
+                        <div class="item">
+                            <input id="address" class="basic-input" name="user.uname" maxlength="70" size="46"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="field">密码
+                        </label>
+                        <div class="item">
+                            <input id="pwd" class="basic-input" type="password"  name="user.pwd" maxlength="70" size="46"/>
+                            <%
+                                if( ${user.msg} != null){
+                            %>
+                            <span style="color: red">${msg}</span><br/>
+                            <%
+                            }else{
+                            %>
+                            <span style="color: red"></span><br/>
+                            <%
+                            }
+                            %>
+                        </div>
+                    </div>
+                    <hr class="hrline"/>
+                    <div class="row footer">
+                        <div class="item">
+                            <input class="loc-btn" type="button" id="submit_form" value="提交"/>
+                            <input class="lnk-flat" type="button" id="cancel_form" value="取消"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="right">
+            <div class="active_info">
+                <div class="hd">
+                    <h2>热门群组
+                        <span class="more">更多>></span>
+                    </h2>
+                </div>
+                <ul>
+                    <li class="info_l active">
+                        <div class="title_l">AGS羽毛球社</div>
+                        <ul class="detail_l">
+                            <li>成员 40 人</li>
+                            <li>活动场地 苏大独墅湖校区</li>
+                            <li>活动时间 每周五</li>
+                        </ul>
+                    </li>
+
+
+                    <li class="info_l active">
+                        <div class="title_l">菁英公寓羽毛球协会</div>
+                        <ul class="detail_l">
+                            <li>成员 80 人</li>
+                            <li>活动场地 菁英公寓文体中心二楼</li>
+                            <li>活动时间 每周六</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="active_info">
+                <div class="hd">
+                    <h2>活跃成员
+                        <span class="more">更多>></span>
+                    </h2>
+                </div>
+                <ul>
+                    <li class="info_l active">
+                        <div class="title_l">土龙</div>
+                        <ul class="detail_l">
+                            <li>活跃项目： 羽毛球</li>
+                            <li>参加群组：AGS羽毛球社等</li>
+                            <li>活动频率：每周3次</li>
+                        </ul>
+                    </li>
+
+
+                    <li class="info_l active">
+                        <div class="title_l">Fred</div>
+                        <ul class="detail_l">
+                            <li>活跃项目： 羽毛球</li>
+                            <li>参加群组：AGS羽毛球社等</li>
+                            <li>活动频率：每周3次</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div></div>
+<div id="footer">
+    <center>
+        <p>Copyright &copy; 2014.12.12 &copy; <strong>Larry BBS</strong></p>
+    </center>
+</div>
+</body>
+</html>

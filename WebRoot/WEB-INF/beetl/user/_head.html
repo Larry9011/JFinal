@@ -1,0 +1,55 @@
+<head>
+    <link href='/css/index.css' rel='stylesheet' type='text/css'/>
+</head>
+<div id='header'>
+    <div id='bar'>
+        <div class='inner'>
+            <a href='/' id='logo'>
+                <img alt='有共同爱好的人在一起' src='/images/logo_top.jpg'>
+            </a>
+            <div id='nav' class='left'>
+                <a href='/wait.jsp'>羽毛球</a>
+                <a href='/wait.jsp'>桌球</a>
+                <a href='/wait.jsp'>游泳</a>
+                <a href='/wait.jsp'>英语</a>
+            </div>
+            <div id='login' class='right'>
+                <%
+                    if( session.uname != null) {
+                %>
+                <a href='${contextPath}/userInfo.jsp'>欢迎 ${session.uname}</a>
+                <a href='${contextPath}/logout'>注销</a>
+                <%
+                    }else{
+                %>
+                <a href='${contextPath}/login'>登录</a>
+                <a href='${contextPath}/register'>注册</a>
+                <%
+                }
+                %>
+            </div>
+        </div>
+    </div>
+    <div id='menu' class='inner'>
+        <ul>
+            <li>
+                <a href='/'>首页</a>
+            </li>
+            <li>
+                <a href='/wait.jsp'>活动</a>
+            </li>
+            <li>
+                <a href='/wait.jsp'>群组</a>
+            </li>
+            <li>
+                <a href='/wait.jsp'>成员</a>
+            </li>
+            <li>
+                <a href='/unable.jsp'>发起活动</a>
+            </li>
+            <li>
+                <a href='/about.jsp'>关于AntsClub</a>
+            </li>
+        </ul>
+    </div>
+</div>

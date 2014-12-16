@@ -9,13 +9,13 @@
                 <td>${topic.mobile}</td>
                 <td>${topic.address}</td>
                 <td>
-                    <a href="${contextPath}/user/queryUserById/${topic.id}">编辑</a>
-                    <a href="${contextPath}/user/deleteById/${topic.id}">删除</a>
+                    <a href="${contextPath}/page/queryUserById/${topic.id}">编辑</a>
+                    <a href="${contextPath}/page/deleteById/${topic.id}">删除</a>
                 </td>
             </tr>
         </div>
         <%}%>
     </div>
-    <% include("/_paginate.html",
+    <% include("/common/_paginate.html",
     {"currentPage":topicPage.pageNumber,"totalPage":topicPage.totalPage}) {} %>
 </div>
